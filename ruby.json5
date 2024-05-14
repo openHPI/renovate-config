@@ -4,7 +4,7 @@
 		{
 			matchFiles: ["Gemfile"],
 			matchUpdateTypes: ["minor", "patch"],
-			groupName: "gems",
+			groupName: "minor gem dependencies",
 		},
 
 		// Group updates for ruby, ruby container images, ruby-version

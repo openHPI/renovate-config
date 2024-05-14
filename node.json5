@@ -4,7 +4,7 @@
 		{
 			matchFiles: ["package.json"],
 			matchUpdateTypes: ["minor", "patch"],
-			groupName: "node",
+			groupName: "minor NPM dependencies",
 		},
 	],
 }
