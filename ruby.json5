@@ -4,7 +4,14 @@
 		{
 			matchFiles: ["Gemfile"],
 			matchUpdateTypes: ["minor", "patch"],
-			groupName: "ruby",
+			groupName: "gems",
+		},
+
+		// Group updates for ruby, ruby container images, ruby-version
+		// files, etc. all in one merge request.
+		{
+			matchPackageNames: ["ruby", "docker.io/ruby"],
+			groupName: "Ruby",
 		},
 	],
 	regexManagers: [
