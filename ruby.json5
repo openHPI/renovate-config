@@ -22,5 +22,11 @@
 			],
 			datasourceTemplate: "rubygems",
 		},
+		{
+			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+			matchStrings: ['ruby-version:\\s+"(?<currentValue>.*?)"'],
+			depNameTemplate: "ruby",
+			datasourceTemplate: "ruby-version",
+		},
 	],
 }
