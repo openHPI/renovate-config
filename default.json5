@@ -21,4 +21,10 @@
 
 	// Have renovate sign commits as GitHub App.
 	platformCommit: true,
+
+	vulnerabilityAlerts: {
+		enabled: true,
+		labels: ["security"],
+	},
+	osvVulnerabilityAlerts: true,
 }
