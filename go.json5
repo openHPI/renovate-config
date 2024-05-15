@@ -9,10 +9,11 @@
 			groupName: "golang",
 		},
 	],
-	regexManagers: [
+	customManagers: [
 		{
+			customType: "regex",
 			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
-			matchStrings: ['go-version:\\s+"(?<currentValue>.*?)"'],
+			matchStrings: ['go-version: "(?<currentValue>.*?)"'],
 			depNameTemplate: "golang",
 			datasourceTemplate: "golang-version",
 		},

@@ -2,9 +2,9 @@
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	packageRules: [
 		{
-			matchFiles: ["Gemfile"],
+			matchFileNames: ["**/Gemfile"],
 			matchUpdateTypes: ["minor", "patch"],
-			groupName: "minor gem dependencies",
+			groupName: "gems dependencies",
 		},
 
 		// Group updates for ruby, ruby container images, ruby-version
@@ -14,8 +14,9 @@
 			groupName: "Ruby",
 		},
 	],
-	regexManagers: [
+	customManagers: [
 		{
+			customType: "regex",
 			fileMatch: ["^*.gemspec"],
 			matchStrings: [
 				".*add.*dependency '(?<depName>.*?)', '(?<currentValue>.*?)'",
@@ -23,6 +24,7 @@
 			datasourceTemplate: "rubygems",
 		},
 		{
+			customType: "regex",
 			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
 			matchStrings: ['ruby-version:\\s+"(?<currentValue>.*?)"'],
 			depNameTemplate: "ruby",
