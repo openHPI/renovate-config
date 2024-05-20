@@ -6,12 +6,19 @@
 			matchUpdateTypes: ["minor", "patch"],
 			groupName: "gems dependencies",
 		},
-
-		// Group updates for ruby, ruby container images, ruby-version
-		// files, etc. all in one merge request.
 		{
-			matchPackageNames: ["ruby", "docker.io/ruby"],
+			matchManagers: ["custom.regex"],
+			matchFileNames: [".github/workflows/*"],
+			rangeStrategy: "replace",
+		},
+		// Group ruby binaries and known container images
+		{
 			groupName: "Ruby",
+			matchPackageNames: [
+				"ghcr.io/ruby/ruby",
+				"registry.docker.com/library/ruby",
+				"ruby",
+			],
 		},
 	],
 	customManagers: [
